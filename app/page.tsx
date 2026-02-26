@@ -429,10 +429,10 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900 text-slate-50">
-      <header className="sticky top-0 z-30 border-b border-slate-800 bg-slate-950/80 backdrop-blur-md">
+      <header className="sticky top-0 z-30 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur-xl">
         <div className="container flex items-center justify-between py-3 md:py-4">
           <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-500 text-xs font-bold shadow-lg shadow-primary-500/40">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary-500 to-purple-500 text-xs font-bold shadow-lg shadow-primary-500/40">
               IELTS
             </div>
             <div className="flex flex-col leading-tight">
@@ -446,23 +446,59 @@ export default function HomePage() {
           </div>
 
           <nav className="hidden items-center gap-6 text-xs text-slate-300 md:flex md:text-sm">
-            <a href="#hero" className="hover:text-primary-400">
+            <a
+              href="#hero"
+              className="rounded-full px-2 py-1 hover:text-primary-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+            >
               {t.nav.hero}
             </a>
-            <a href="#courses" className="hover:text-primary-400">
+            <a
+              href="#courses"
+              className="rounded-full px-2 py-1 hover:text-primary-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+            >
               {t.nav.courses}
             </a>
-            <a href="#why" className="hover:text-primary-400">
+            <a
+              href="#why"
+              className="rounded-full px-2 py-1 hover:text-primary-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+            >
               {t.nav.why}
             </a>
-            <a href="#results" className="hover:text-primary-400">
+            <a
+              href="#results"
+              className="rounded-full px-2 py-1 hover:text-primary-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+            >
               {t.nav.results}
             </a>
-            <a href="#teachers" className="hover:text-primary-400">
+            <a
+              href="#teachers"
+              className="rounded-full px-2 py-1 hover:text-primary-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+            >
               {t.nav.teachers}
             </a>
-            <a href="#trial" className="hover:text-primary-400">
+            <a
+              href="#trial"
+              className="rounded-full px-2 py-1 hover:text-primary-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+            >
               {t.nav.trial}
+            </a>
+            <a
+              href="#testimonials"
+              className="rounded-full px-2 py-1 hover:text-primary-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+            >
+              {t.nav.testimonials}
+            </a>
+            <a
+              href="#faq"
+              className="rounded-full px-2 py-1 hover:text-primary-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+            >
+              {t.nav.faq}
+            </a>
+            <a
+              href="#contact"
+              className="rounded-full px-2 py-1 hover:text-primary-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+            >
+              {t.nav.contact}
             </a>
           </nav>
 
@@ -493,7 +529,7 @@ export default function HomePage() {
             </div>
             <a
               href={`tel:${PHONE_NUMBER_LINK}`}
-              className="hidden rounded-full bg-primary-500 px-4 py-2 text-xs font-semibold text-white shadow-md shadow-primary-500/40 hover:bg-primary-400 md:inline-flex md:text-sm"
+              className="hidden rounded-full bg-primary-500 px-4 py-2 text-xs font-semibold text-white shadow-md shadow-primary-500/40 hover:bg-primary-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 md:inline-flex md:text-sm"
             >
               {PHONE_NUMBER_DISPLAY}
             </a>
@@ -501,13 +537,19 @@ export default function HomePage() {
         </div>
       </header>
 
-      <main>
+      <main className="pb-24 md:pb-0">
         {/* Hero */}
         <section
           id="hero"
-          className="section border-b border-slate-800/60 bg-radial from-primary-500/10 via-slate-950 to-slate-950"
+          className="section relative overflow-hidden border-b border-slate-800/60"
         >
-          <div className="container grid gap-10 md:grid-cols-[3fr,2fr] md:items-center">
+          <div className="pointer-events-none absolute inset-0">
+            <div className="absolute -left-32 top-[-8rem] h-80 w-80 rounded-full bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.32),_transparent_60%)] blur-3xl" />
+            <div className="absolute right-[-4rem] top-24 h-80 w-80 rounded-full bg-[radial-gradient(circle_at_top,_rgba(168,85,247,0.25),_transparent_60%)] blur-3xl" />
+            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+          </div>
+
+          <div className="container relative grid gap-10 md:grid-cols-[3fr,2fr] md:items-center">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-primary-500/30 bg-primary-500/10 px-3 py-1 text-[11px] font-medium text-primary-200 shadow-md shadow-primary-500/30 md:text-xs">
                 <span className="inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
@@ -522,38 +564,20 @@ export default function HomePage() {
               <div className="mt-7 flex flex-wrap items-center gap-3">
                 <a
                   href="#trial"
-                  className="inline-flex items-center justify-center rounded-full bg-primary-500 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary-500/40 hover:bg-primary-400"
+                  className="inline-flex items-center justify-center rounded-full bg-primary-500 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary-500/40 hover:bg-primary-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
                 >
                   {t.hero.ctaPrimary}
                 </a>
                 <a
                   href="#courses"
-                  className="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-900/60 px-5 py-2.5 text-sm font-semibold text-slate-100 hover:border-primary-500/60 hover:text-primary-100"
+                  className="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-900/60 px-5 py-2.5 text-sm font-semibold text-slate-100 hover:border-primary-500/60 hover:text-primary-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
                 >
                   {t.hero.ctaSecondary}
                 </a>
               </div>
-              <div className="mt-8 flex flex-wrap items-center gap-6 text-xs text-slate-400 md:text-sm">
-                <div>
-                  <span className="font-semibold text-slate-100">7.0+</span>{" "}
-                  IELTS o‘rtacha band
-                </div>
-                <div>
-                  <span className="font-semibold text-slate-100">
-                    50+ talaba
-                  </span>{" "}
-                  chet el universitetlarida
-                </div>
-                <div>
-                  <span className="font-semibold text-slate-100">
-                    30+ grant
-                  </span>{" "}
-                  va stipendiyalar
-                </div>
-              </div>
             </div>
 
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 shadow-xl shadow-primary-500/10">
+            <div className="rounded-2xl border border-slate-800/80 bg-slate-900/80 p-5 shadow-xl shadow-primary-500/20">
               <div className="mb-4 flex items-center justify-between text-xs text-slate-400">
                 <span>Next lesson</span>
                 <span>Today • 18:30</span>
@@ -589,6 +613,36 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+
+          {/* Trust strip */}
+          <div className="container relative mt-10">
+            <div className="grid gap-4 rounded-2xl border border-slate-800/80 bg-slate-950/80 p-4 shadow-lg shadow-black/20 md:grid-cols-3">
+              <div className="rounded-xl border border-slate-800 bg-slate-900/70 p-4 text-center">
+                <div className="text-lg font-semibold text-primary-200 md:text-xl">
+                  7.0+
+                </div>
+                <p className="mt-1 text-xs text-slate-300 md:text-sm">
+                  IELTS o‘rtacha band / Средний балл IELTS
+                </p>
+              </div>
+              <div className="rounded-xl border border-slate-800 bg-slate-900/70 p-4 text-center">
+                <div className="text-lg font-semibold text-primary-200 md:text-xl">
+                  50+
+                </div>
+                <p className="mt-1 text-xs text-slate-300 md:text-sm">
+                  Chet elda o‘qiyotgan talabalar / Студенты за рубежом
+                </p>
+              </div>
+              <div className="rounded-xl border border-slate-800 bg-slate-900/70 p-4 text-center">
+                <div className="text-lg font-semibold text-primary-200 md:text-xl">
+                  30+
+                </div>
+                <p className="mt-1 text-xs text-slate-300 md:text-sm">
+                  Grant va stipendiya egalari / Обладатели грантов
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* Courses */}
@@ -607,7 +661,7 @@ export default function HomePage() {
               ).map(([key, course]) => (
                 <article
                   key={key}
-                  className="group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-900/60 p-5 shadow-sm shadow-black/40 transition hover:border-primary-500/60 hover:shadow-primary-500/20"
+                  className="group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-900/60 p-5 shadow-sm shadow-black/40 transition hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-xl hover:shadow-primary-500/20"
                 >
                   <div>
                     <h3 className="text-lg font-semibold text-slate-50">
@@ -617,7 +671,7 @@ export default function HomePage() {
                       {course.description}
                     </p>
                   </div>
-                  <dl className="mt-4 grid grid-cols-1 gap-2 text-xs text-slate-300 sm:grid-cols-3">
+                  <dl className="mt-4 grid grid-cols-1 gap-3 text-xs text-slate-300 sm:grid-cols-3">
                     <div>
                       <dt className="text-[11px] uppercase tracking-wide text-slate-500">
                         Level
@@ -653,7 +707,7 @@ export default function HomePage() {
                 {t.why.points.map((point) => (
                   <div
                     key={point.title}
-                    className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4"
+                    className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 shadow-sm shadow-black/30"
                   >
                     <h3 className="text-sm font-semibold md:text-base">
                       {point.title}
@@ -691,7 +745,7 @@ export default function HomePage() {
               {t.results.stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-center shadow-sm shadow-black/30"
+                  className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-center shadow-sm shadow-black/40"
                 >
                   <div className="text-xl font-semibold text-primary-200 md:text-2xl">
                     {stat.value}
@@ -716,7 +770,7 @@ export default function HomePage() {
               {t.teachers.items.map((teacher) => (
                 <article
                   key={teacher.name}
-                  className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 text-center shadow-sm shadow-black/30"
+                  className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 text-center shadow-sm shadow-black/40"
                 >
                   <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-primary-500/20 text-sm font-semibold text-primary-100">
                     {teacher.name
@@ -748,7 +802,7 @@ export default function HomePage() {
 
               <form
                 onSubmit={handleSubmit}
-                className="mt-6 space-y-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-5 shadow-sm shadow-black/30"
+                className="mt-6 space-y-4 rounded-2xl border border-slate-800 bg-slate-900/70 p-5 shadow-sm shadow-black/40"
               >
                 <div className="space-y-1 text-sm">
                   <label
@@ -761,7 +815,7 @@ export default function HomePage() {
                     id="name"
                     name="name"
                     required
-                    className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-50 outline-none ring-primary-500/40 placeholder:text-slate-500 focus:border-primary-500 focus:ring-2"
+                    className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-50 outline-none ring-primary-500/40 placeholder:text-slate-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/60"
                     placeholder={
                       language === "uz" ? "Ismingizni kiriting" : "Введите имя"
                     }
@@ -778,7 +832,7 @@ export default function HomePage() {
                     id="phone"
                     name="phone"
                     required
-                    className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-50 outline-none ring-primary-500/40 placeholder:text-slate-500 focus:border-primary-500 focus:ring-2"
+                    className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-50 outline-none ring-primary-500/40 placeholder:text-slate-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/60"
                     placeholder={
                       language === "uz"
                         ? "+998 90 123 45 67"
@@ -797,7 +851,7 @@ export default function HomePage() {
                     id="course"
                     name="course"
                     required
-                    className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-50 outline-none ring-primary-500/40 focus:border-primary-500 focus:ring-2"
+                    className="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-50 outline-none ring-primary-500/40 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/60"
                     defaultValue=""
                   >
                     <option value="" disabled>
@@ -815,7 +869,7 @@ export default function HomePage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex w-full items-center justify-center rounded-lg bg-primary-500 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary-500/40 hover:bg-primary-400 disabled:cursor-not-allowed disabled:opacity-70"
+                  className="inline-flex w-full items-center justify-center rounded-lg bg-primary-500 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary-500/40 hover:bg-primary-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 disabled:cursor-not-allowed disabled:opacity-70"
                 >
                   {isSubmitting
                     ? language === "uz"
@@ -832,7 +886,7 @@ export default function HomePage() {
               </form>
             </div>
 
-            <div className="space-y-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-5 text-xs text-slate-300 shadow-sm shadow-black/30 md:text-sm">
+            <div className="space-y-4 rounded-2xl border border-slate-800 bg-slate-900/70 p-5 text-xs text-slate-300 shadow-sm shadow-black/40 md:text-sm">
               <h3 className="text-sm font-semibold text-slate-50 md:text-base">
                 IELTS yo‘nalishida qanday yordam beramiz?
               </h3>
@@ -859,7 +913,7 @@ export default function HomePage() {
               {t.testimonials.items.map((item) => (
                 <figure
                   key={item.name}
-                  className="flex h-full flex-col rounded-2xl border border-slate-800 bg-slate-900/60 p-5 text-sm text-slate-300 shadow-sm shadow-black/30"
+                  className="flex h-full flex-col rounded-2xl border border-slate-800 bg-slate-900/70 p-5 text-sm text-slate-300 shadow-sm shadow-black/40"
                 >
                   <p className="flex-1 text-xs leading-relaxed md:text-sm">
                     &ldquo;{item.text}&rdquo;
@@ -884,7 +938,7 @@ export default function HomePage() {
               {t.faq.items.map((item) => (
                 <details
                   key={item.question}
-                  className="group rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-sm text-slate-300"
+                  className="group rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-sm text-slate-300"
                 >
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-xs font-medium text-slate-100 md:text-sm">
                     <span>{item.question}</span>
@@ -909,7 +963,7 @@ export default function HomePage() {
               <div className="mt-6 flex flex-wrap items-center gap-3">
                 <a
                   href={`tel:${PHONE_NUMBER_LINK}`}
-                  className="inline-flex items-center justify-center rounded-full bg-primary-500 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary-500/40 hover:bg-primary-400"
+                  className="inline-flex items-center justify-center rounded-full bg-primary-500 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary-500/40 hover:bg-primary-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
                 >
                   {t.contact.phoneLabel}: {PHONE_NUMBER_DISPLAY}
                 </a>
@@ -917,13 +971,13 @@ export default function HomePage() {
                   href={TELEGRAM_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-900/60 px-6 py-2.5 text-sm font-semibold text-slate-100 hover:border-primary-500/60 hover:text-primary-100"
+                  className="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-900/60 px-6 py-2.5 text-sm font-semibold text-slate-100 hover:border-primary-500/60 hover:text-primary-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
                 >
                   {t.contact.telegramLabel}
                 </a>
               </div>
             </div>
-            <div className="space-y-3 rounded-2xl border border-slate-800 bg-slate-900/60 p-5 text-xs text-slate-300 shadow-sm shadow-black/30 md:text-sm">
+            <div className="space-y-3 rounded-2xl border border-slate-800 bg-slate-900/70 p-5 text-xs text-slate-300 shadow-sm shadow-black/40 md:text-sm">
               <p>
                 Ish vaqti: Dushanba–Yakshanba, 10:00–21:00. Darslar jadvali
                 guruh va darajaga qarab shakllanadi.
@@ -943,6 +997,60 @@ export default function HomePage() {
           <span>Made with Next.js 14 & Tailwind CSS.</span>
         </div>
       </footer>
+
+      {/* Mobile bottom CTA bar */}
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-800/80 bg-slate-950/95/90 backdrop-blur-lg md:hidden">
+        <div className="container flex items-center justify-between gap-3 py-3">
+          <button
+            type="button"
+            onClick={() => {
+              const el = document.getElementById("trial");
+              if (el) {
+                el.scrollIntoView({ behavior: "smooth", block: "start" });
+              }
+            }}
+            className="flex-1 inline-flex items-center justify-center rounded-full bg-primary-500 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-primary-500/40 hover:bg-primary-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+          >
+            {t.hero.ctaPrimary}
+          </button>
+          <div className="flex items-center gap-2">
+            <a
+              href={`tel:${PHONE_NUMBER_LINK}`}
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-700 bg-slate-900/80 text-slate-200 hover:border-primary-500/60 hover:text-primary-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+              aria-label={t.contact.phoneLabel}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                className="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M4.5 5.5C4.5 15 9 19.5 18.5 19.5C19.328 19.5 20 18.828 20 18V15.75C20 15.3358 19.6642 15 19.25 15L16.75 15C16.421 15 16.1375 15.214 16.047 15.53L15.572 17.214C13.8 16.7 11.8 14.8 11.286 13.028L12.97 12.553C13.286 12.4625 13.5 12.179 13.5 11.85L13.5 9.35C13.5 8.93579 13.1642 8.6 12.75 8.6H10.5C9.67157 8.6 9 9.27157 9 10.1V10.1" />
+              </svg>
+            </a>
+            <a
+              href={TELEGRAM_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-700 bg-slate-900/80 text-slate-200 hover:border-primary-500/60 hover:text-primary-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+              aria-label={t.contact.telegramLabel}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                className="h-4 w-4"
+                fill="currentColor"
+              >
+                <path d="M9.036 14.47 8.77 17.727c.37 0 .53-.159.72-.35l1.732-1.658 3.594 2.634c.658.363 1.124.172 1.303-.61l2.359-11.066.001-.001c.21-.98-.356-1.363-1.002-1.125L4.52 9.39c-.956.371-.942.905-.163 1.146l3.35 1.043 7.777-4.91c.366-.222.701-.103.426.119" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

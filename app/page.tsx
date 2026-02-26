@@ -429,8 +429,8 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900 text-slate-50">
-      <header className="sticky top-0 z-30 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur-xl">
-        <div className="container flex items-center justify-between py-3 md:py-4">
+      <header className="sticky top-0 z-30 border-b border-slate-800/70 bg-slate-950/75 backdrop-blur-xl">
+        <div className="container flex items-center justify-between py-2.5 md:py-3.5">
           <div className="flex items-center gap-2">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary-500 to-purple-500 text-xs font-bold shadow-lg shadow-primary-500/40">
               IELTS
@@ -469,30 +469,6 @@ export default function HomePage() {
               className="rounded-full px-2 py-1 hover:text-primary-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
             >
               {t.nav.results}
-            </a>
-            <a
-              href="#teachers"
-              className="rounded-full px-2 py-1 hover:text-primary-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
-            >
-              {t.nav.teachers}
-            </a>
-            <a
-              href="#trial"
-              className="rounded-full px-2 py-1 hover:text-primary-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
-            >
-              {t.nav.trial}
-            </a>
-            <a
-              href="#testimonials"
-              className="rounded-full px-2 py-1 hover:text-primary-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
-            >
-              {t.nav.testimonials}
-            </a>
-            <a
-              href="#faq"
-              className="rounded-full px-2 py-1 hover:text-primary-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
-            >
-              {t.nav.faq}
             </a>
             <a
               href="#contact"
@@ -547,9 +523,10 @@ export default function HomePage() {
             <div className="absolute -left-32 top-[-8rem] h-80 w-80 rounded-full bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.32),_transparent_60%)] blur-3xl" />
             <div className="absolute right-[-4rem] top-24 h-80 w-80 rounded-full bg-[radial-gradient(circle_at_top,_rgba(168,85,247,0.25),_transparent_60%)] blur-3xl" />
             <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(148,163,184,0.18),_transparent_55%),radial-gradient(circle_at_bottom,_rgba(15,23,42,0.9),_transparent_60%)] opacity-40 mix-blend-soft-light" />
           </div>
 
-          <div className="container relative grid gap-10 md:grid-cols-[3fr,2fr] md:items-center">
+          <div className="container relative grid gap-10 md:grid-cols-[3fr,2.2fr] md:items-center">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-primary-500/30 bg-primary-500/10 px-3 py-1 text-[11px] font-medium text-primary-200 shadow-md shadow-primary-500/30 md:text-xs">
                 <span className="inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
@@ -564,51 +541,86 @@ export default function HomePage() {
               <div className="mt-7 flex flex-wrap items-center gap-3">
                 <a
                   href="#trial"
-                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-500 to-sky-500 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary-500/40 hover:from-primary-400 hover:to-sky-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-500 to-sky-500 px-6 py-3 text-sm font-semibold text-white shadow-xl shadow-primary-500/50 hover:from-primary-400 hover:to-sky-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 md:px-7 md:py-3.5 md:text-base"
                 >
                   {t.hero.ctaPrimary}
                 </a>
                 <a
                   href="#courses"
-                  className="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-900/40 px-5 py-2.5 text-sm font-semibold text-slate-100 hover:border-primary-400 hover:text-primary-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+                  className="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-900/40 px-4 py-2.5 text-xs font-semibold text-slate-100 hover:border-primary-400 hover:text-primary-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 md:px-5 md:text-sm"
                 >
                   {t.hero.ctaSecondary}
                 </a>
               </div>
             </div>
 
-            <div className="rounded-2xl border border-slate-800/80 bg-slate-900/80 p-5 shadow-xl shadow-primary-500/20">
+            <div className="rounded-3xl border border-slate-800/80 bg-slate-900/80 p-5 shadow-xl shadow-primary-500/30">
               <div className="mb-4 flex items-center justify-between text-xs text-slate-400">
-                <span>Next lesson</span>
-                <span>Today • 18:30</span>
+                <span className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-wide text-slate-400">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  Live overview
+                </span>
+                <span className="rounded-full bg-slate-800/80 px-3 py-1 text-[11px] text-slate-200">
+                  IELTS • CEFR • Math
+                </span>
               </div>
               <div className="space-y-3 text-xs md:text-sm">
-                <div className="flex items-center justify-between rounded-xl bg-slate-800/80 px-4 py-3">
+                <div className="flex items-center justify-between rounded-2xl bg-slate-800/80 px-4 py-3">
                   <div>
                     <p className="font-semibold text-slate-50">
-                      IELTS Intensive
+                      IELTS Intensive group
                     </p>
                     <p className="text-[11px] text-slate-400">
-                      Upper-Intermediate • Speaking & Writing
+                      Upper-Intermediate • Speaking & Writing focus
                     </p>
                   </div>
                   <span className="rounded-full bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold text-emerald-300">
                     7.0+ target
                   </span>
                 </div>
-                <div className="flex items-center justify-between rounded-xl border border-slate-800 bg-slate-900/60 px-4 py-3">
+                <div className="flex items-center justify-between rounded-2xl border border-slate-800 bg-slate-900/70 px-4 py-3">
                   <div>
                     <p className="text-xs font-semibold text-slate-100">
-                      Free placement test
+                      Speaking & Writing club
                     </p>
                     <p className="text-[11px] text-slate-400">
-                      25–30 minutes • Speaking + Grammar
+                      Weekly feedback sessions in exam format
                     </p>
                   </div>
+                  <span className="text-[11px] text-slate-400">
+                    Sat • 17:00
+                  </span>
                 </div>
-                <div className="rounded-xl border border-dashed border-primary-500/40 bg-primary-500/5 px-4 py-3 text-[11px] text-primary-100">
-                  1-hafta davomida darslar formati va ustozlarimiz bilan
-                  bepul tanishib ko‘ring. Keyin qaror qabul qilasiz.
+                <div className="flex items-center justify-between rounded-2xl border border-slate-800 bg-slate-900/70 px-4 py-3">
+                  <div>
+                    <p className="text-xs font-semibold text-slate-100">
+                      CEFR & national exams
+                    </p>
+                    <p className="text-[11px] text-slate-400">
+                      Grammar, reading & listening strategies
+                    </p>
+                  </div>
+                  <span className="text-[11px] text-slate-400">
+                    A2–C1 levels
+                  </span>
+                </div>
+                <div className="mt-2 rounded-2xl border border-dashed border-primary-500/50 bg-primary-500/5 px-4 py-3 text-[11px] text-primary-100">
+                  1-haftalik sinov darslari va konsultatsiyalar orqali sizga
+                  mos guruhni tanlashga yordam beramiz.
+                </div>
+                <div className="mt-1 flex items-center justify-between rounded-2xl border border-slate-800 bg-slate-950/80 px-4 py-3 text-[11px] text-slate-300">
+                  <div className="flex flex-col">
+                    <span className="text-xs font-semibold text-slate-100">
+                      Bugungi dars
+                    </span>
+                    <span>IELTS Reading & Listening</span>
+                  </div>
+                  <div className="text-right text-[11px]">
+                    <p className="font-semibold text-primary-200">
+                      18:30–20:00
+                    </p>
+                    <p className="text-slate-500">Markaziy filial</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -616,37 +628,114 @@ export default function HomePage() {
 
           {/* Trust strip */}
           <div className="container relative mt-10">
-            <div className="grid gap-4 rounded-2xl border border-slate-800/80 bg-slate-950/80 p-4 shadow-lg shadow-black/20 md:grid-cols-3">
-              <div className="rounded-xl border border-slate-800 bg-slate-900/70 p-4 text-center">
-                <div className="text-lg font-semibold text-primary-200 md:text-xl">
-                  7.0+
+            <div className="grid gap-4 rounded-2xl border border-slate-800/80 bg-slate-950/80 p-4 shadow-lg shadow-black/20 md:grid-cols-4">
+              <div className="flex items-center gap-3 rounded-xl bg-slate-900/80 px-3 py-3">
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary-500/15 text-primary-200">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    className="h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M3 12l2-2 4 4 10-10 2 2-12 12-6-6z" />
+                  </svg>
                 </div>
-                <p className="mt-1 text-xs text-slate-300 md:text-sm">
-                  IELTS o‘rtacha band / Средний балл IELTS
-                </p>
+                <div>
+                  <div className="text-sm font-semibold text-primary-200">
+                    7.0+
+                  </div>
+                  <p className="text-[11px] text-slate-300">
+                    O‘rtacha IELTS band
+                  </p>
+                </div>
               </div>
-              <div className="rounded-xl border border-slate-800 bg-slate-900/70 p-4 text-center">
-                <div className="text-lg font-semibold text-primary-200 md:text-xl">
-                  50+
+              <div className="flex items-center gap-3 rounded-xl bg-slate-900/80 px-3 py-3">
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary-500/15 text-primary-200">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    className="h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+                    <path d="M7 22h10" />
+                  </svg>
                 </div>
-                <p className="mt-1 text-xs text-slate-300 md:text-sm">
-                  Chet elda o‘qiyotgan talabalar / Студенты за рубежом
-                </p>
+                <div>
+                  <div className="text-sm font-semibold text-primary-200">
+                    80%
+                  </div>
+                  <p className="text-[11px] text-slate-300">
+                    6.5+ olgan talabalar
+                  </p>
+                </div>
               </div>
-              <div className="rounded-xl border border-slate-800 bg-slate-900/70 p-4 text-center">
-                <div className="text-lg font-semibold text-primary-200 md:text-xl">
-                  30+
+              <div className="flex items-center gap-3 rounded-xl bg-slate-900/80 px-3 py-3">
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary-500/15 text-primary-200">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    className="h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M3 6l3 1 3-1 3 1 3-1 3 1" />
+                    <path d="M4 6v10a2 2 0 0 0 2 2h12" />
+                  </svg>
                 </div>
-                <p className="mt-1 text-xs text-slate-300 md:text-sm">
-                  Grant va stipendiya egalari / Обладатели грантов
-                </p>
+                <div>
+                  <div className="text-sm font-semibold text-primary-200">
+                    50+
+                  </div>
+                  <p className="text-[11px] text-slate-300">
+                    Chet elda o‘qiyotganlar
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 rounded-xl bg-slate-900/80 px-3 py-3">
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary-500/15 text-primary-200">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    className="h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M12 2l3 7h7l-5.5 4.3L18 21l-6-3.8L6 21l1.5-7.7L2 9h7z" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="text-sm font-semibold text-primary-200">
+                    30+
+                  </div>
+                  <p className="text-[11px] text-slate-300">
+                    Grant va stipendiyalar
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Courses */}
-        <section id="courses" className="section border-b border-slate-800/60">
+        <section
+          id="courses"
+          className="section border-b border-slate-800/60 bg-slate-950/40"
+        >
           <div className="container">
             <div className="max-w-2xl">
               <h2 className="section-title">{t.courses.title}</h2>
@@ -659,46 +748,51 @@ export default function HomePage() {
                   (typeof t)["courses"]["items"][CourseKey]
                 ][]
               ).map(([key, course]) => (
-                <article
+                <div
                   key={key}
-                  className="group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-900/60 p-5 shadow-sm shadow-black/40 transition hover:-translate-y-0.5 hover:border-primary-400 hover:shadow-xl hover:shadow-primary-500/20"
+                  className="group rounded-2xl bg-gradient-to-br from-slate-800/80 via-slate-900 to-slate-950/80 p-[1px] shadow-sm shadow-black/40 transition hover:-translate-y-0.5 hover:from-primary-500/30 hover:via-slate-900 hover:to-slate-950 hover:shadow-xl hover:shadow-primary-500/30"
                 >
-                  <div>
-                    <h3 className="text-lg font-semibold text-slate-50">
-                      {course.name}
-                    </h3>
-                    <p className="mt-2 text-sm text-slate-300">
-                      {course.description}
-                    </p>
-                  </div>
-                  <dl className="mt-4 grid grid-cols-1 gap-3 text-xs text-slate-300 sm:grid-cols-3">
+                  <article className="flex h-full flex-col justify-between rounded-[1rem] bg-slate-950/90 p-5">
                     <div>
-                      <dt className="text-[11px] uppercase tracking-wide text-slate-500">
-                        Level
-                      </dt>
-                      <dd>{course.level}</dd>
+                      <h3 className="text-lg font-semibold text-slate-50">
+                        {course.name}
+                      </h3>
+                      <p className="mt-2 text-sm text-slate-300">
+                        {course.description}
+                      </p>
                     </div>
-                    <div>
-                      <dt className="text-[11px] uppercase tracking-wide text-slate-500">
-                        Duration
-                      </dt>
-                      <dd>{course.duration}</dd>
-                    </div>
-                    <div>
-                      <dt className="text-[11px] uppercase tracking-wide text-slate-500">
-                        Schedule
-                      </dt>
-                      <dd>{course.schedule}</dd>
-                    </div>
-                  </dl>
-                </article>
+                    <dl className="mt-5 grid grid-cols-1 gap-3 text-xs text-slate-300 sm:grid-cols-3">
+                      <div>
+                        <dt className="text-[11px] uppercase tracking-wide text-slate-500">
+                          Level
+                        </dt>
+                        <dd className="mt-1">{course.level}</dd>
+                      </div>
+                      <div>
+                        <dt className="text-[11px] uppercase tracking-wide text-slate-500">
+                          Duration
+                        </dt>
+                        <dd className="mt-1">{course.duration}</dd>
+                      </div>
+                      <div>
+                        <dt className="text-[11px] uppercase tracking-wide text-slate-500">
+                          Schedule
+                        </dt>
+                        <dd className="mt-1">{course.schedule}</dd>
+                      </div>
+                    </dl>
+                  </article>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* Why choose us */}
-        <section id="why" className="section border-b border-slate-800/60">
+        <section
+          id="why"
+          className="section border-b border-slate-800/60 bg-slate-950"
+        >
           <div className="container grid gap-8 md:grid-cols-[3fr,2fr] md:items-start">
             <div>
               <h2 className="section-title">{t.why.title}</h2>
@@ -707,14 +801,16 @@ export default function HomePage() {
                 {t.why.points.map((point) => (
                   <div
                     key={point.title}
-                    className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 shadow-sm shadow-black/30"
+                    className="rounded-2xl bg-gradient-to-br from-slate-800/80 via-slate-900 to-slate-950/80 p-[1px] shadow-sm shadow-black/40"
                   >
-                    <h3 className="text-sm font-semibold md:text-base">
-                      {point.title}
-                    </h3>
-                    <p className="mt-2 text-xs text-slate-300 md:text-sm">
-                      {point.text}
-                    </p>
+                    <div className="rounded-[1rem] bg-slate-950/90 p-4">
+                      <h3 className="text-sm font-semibold md:text-base">
+                        {point.title}
+                      </h3>
+                      <p className="mt-2 text-xs text-slate-300 md:text-sm">
+                        {point.text}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -735,7 +831,10 @@ export default function HomePage() {
         </section>
 
         {/* Student results */}
-        <section id="results" className="section border-b border-slate-800/60">
+        <section
+          id="results"
+          className="section border-b border-slate-800/60 bg-slate-950/40"
+        >
           <div className="container">
             <div className="max-w-2xl">
               <h2 className="section-title">{t.results.title}</h2>
@@ -745,13 +844,15 @@ export default function HomePage() {
               {t.results.stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-center shadow-sm shadow-black/40"
+                  className="rounded-2xl bg-gradient-to-br from-slate-800/80 via-slate-900 to-slate-950/80 p-[1px] text-center shadow-sm shadow-black/40"
                 >
-                  <div className="text-xl font-semibold text-primary-200 md:text-2xl">
-                    {stat.value}
-                  </div>
-                  <div className="mt-2 text-xs text-slate-300 md:text-sm">
-                    {stat.label}
+                  <div className="rounded-[1rem] bg-slate-950/90 p-4">
+                    <div className="text-xl font-semibold text-primary-200 md:text-2xl">
+                      {stat.value}
+                    </div>
+                    <div className="mt-2 text-xs text-slate-300 md:text-sm">
+                      {stat.label}
+                    </div>
                   </div>
                 </div>
               ))}
@@ -760,7 +861,10 @@ export default function HomePage() {
         </section>
 
         {/* Teachers */}
-        <section id="teachers" className="section border-b border-slate-800/60">
+        <section
+          id="teachers"
+          className="section border-b border-slate-800/60 bg-slate-950"
+        >
           <div className="container">
             <div className="max-w-2xl">
               <h2 className="section-title">{t.teachers.title}</h2>
@@ -768,34 +872,39 @@ export default function HomePage() {
             </div>
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               {t.teachers.items.map((teacher) => (
-                <article
+                <div
                   key={teacher.name}
-                  className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 text-center shadow-sm shadow-black/40"
+                  className="rounded-2xl bg-gradient-to-br from-slate-800/80 via-slate-900 to-slate-950/80 p-[1px] text-center shadow-sm shadow-black/40"
                 >
-                  <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-primary-500/20 text-sm font-semibold text-primary-100">
-                    {teacher.name
-                      .split(" ")
-                      .map((w) => w[0])
-                      .join("")}
-                  </div>
-                  <h3 className="text-sm font-semibold md:text-base">
-                    {teacher.name}
-                  </h3>
-                  <p className="mt-1 text-xs text-primary-200 md:text-sm">
-                    {teacher.role}
-                  </p>
-                  <p className="mt-2 text-xs text-slate-300 md:text-sm">
-                    {teacher.description}
-                  </p>
-                </article>
+                  <article className="rounded-[1rem] bg-slate-950/90 p-5">
+                    <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-primary-500/20 text-sm font-semibold text-primary-100">
+                      {teacher.name
+                        .split(" ")
+                        .map((w) => w[0])
+                        .join("")}
+                    </div>
+                    <h3 className="text-sm font-semibold md:text-base">
+                      {teacher.name}
+                    </h3>
+                    <p className="mt-1 text-xs text-primary-200 md:text-sm">
+                      {teacher.role}
+                    </p>
+                    <p className="mt-2 text-xs text-slate-300 md:text-sm">
+                      {teacher.description}
+                    </p>
+                  </article>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* Free trial lesson form */}
-        <section id="trial" className="section border-b border-slate-800/60">
-          <div className="container grid gap-8 md:grid-cols-[3fr,2fr] md:items-start">
+        <section
+          id="trial"
+          className="section border-b border-slate-800/60 bg-slate-950/40"
+        >
+          <div className="container grid gap-8 md:grid-cols-2 md:items-start">
             <div>
               <h2 className="section-title">{t.trial.title}</h2>
               <p className="section-subtitle">{t.trial.subtitle}</p>
@@ -902,7 +1011,7 @@ export default function HomePage() {
         {/* Testimonials */}
         <section
           id="testimonials"
-          className="section border-b border-slate-800/60"
+          className="section border-b border-slate-800/60 bg-slate-950"
         >
           <div className="container">
             <div className="max-w-2xl">
@@ -913,14 +1022,16 @@ export default function HomePage() {
               {t.testimonials.items.map((item) => (
                 <figure
                   key={item.name}
-                  className="flex h-full flex-col rounded-2xl border border-slate-800 bg-slate-900/70 p-5 text-sm text-slate-300 shadow-sm shadow-black/40"
+                  className="flex h-full flex-col rounded-2xl bg-gradient-to-br from-slate-800/80 via-slate-900 to-slate-950/80 p-[1px] text-sm text-slate-300 shadow-sm shadow-black/40"
                 >
-                  <p className="flex-1 text-xs leading-relaxed md:text-sm">
-                    &ldquo;{item.text}&rdquo;
-                  </p>
-                  <figcaption className="mt-4 text-xs font-semibold text-slate-100 md:text-sm">
-                    {item.name}
-                  </figcaption>
+                  <div className="flex h-full flex-col rounded-[1rem] bg-slate-950/90 p-5">
+                    <p className="flex-1 text-xs leading-relaxed md:text-sm">
+                      &ldquo;{item.text}&rdquo;
+                    </p>
+                    <figcaption className="mt-4 text-xs font-semibold text-slate-100 md:text-sm">
+                      {item.name}
+                    </figcaption>
+                  </div>
                 </figure>
               ))}
             </div>
@@ -928,7 +1039,10 @@ export default function HomePage() {
         </section>
 
         {/* FAQ */}
-        <section id="faq" className="section border-b border-slate-800/60">
+        <section
+          id="faq"
+          className="section border-b border-slate-800/60 bg-slate-950/40"
+        >
           <div className="container">
             <div className="max-w-2xl">
               <h2 className="section-title">{t.faq.title}</h2>
@@ -955,7 +1069,7 @@ export default function HomePage() {
         </section>
 
         {/* Contact */}
-        <section id="contact" className="section">
+        <section id="contact" className="section bg-slate-950">
           <div className="container grid gap-8 md:grid-cols-[3fr,2fr] md:items-center">
             <div>
               <h2 className="section-title">{t.contact.title}</h2>
@@ -1009,7 +1123,7 @@ export default function HomePage() {
                 el.scrollIntoView({ behavior: "smooth", block: "start" });
               }
             }}
-            className="flex-1 inline-flex items-center justify-center rounded-full bg-primary-500 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-primary-500/40 hover:bg-primary-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+            className="flex-1 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-500 to-sky-500 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary-500/40 hover:from-primary-400 hover:to-sky-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
           >
             {t.hero.ctaPrimary}
           </button>

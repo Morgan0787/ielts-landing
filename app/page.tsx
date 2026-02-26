@@ -445,7 +445,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <nav className="hidden items-center gap-6 text-xs text-slate-300 md:flex md:text-sm">
+          <nav className="hidden items-center gap-4 text-[11px] text-slate-300 md:flex md:text-xs">
             <a
               href="#hero"
               className="rounded-full px-2 py-1 hover:text-primary-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
@@ -529,7 +529,7 @@ export default function HomePage() {
             </div>
             <a
               href={`tel:${PHONE_NUMBER_LINK}`}
-              className="hidden rounded-full bg-primary-500 px-4 py-2 text-xs font-semibold text-white shadow-md shadow-primary-500/40 hover:bg-primary-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 md:inline-flex md:text-sm"
+              className="hidden whitespace-nowrap rounded-full bg-gradient-to-r from-primary-500 to-sky-500 px-4 py-2 text-xs font-semibold text-white shadow-md shadow-primary-500/40 hover:from-primary-400 hover:to-sky-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 md:inline-flex md:text-sm"
             >
               {PHONE_NUMBER_DISPLAY}
             </a>
@@ -555,7 +555,7 @@ export default function HomePage() {
                 <span className="inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
                 {t.hero.badge}
               </div>
-              <h1 className="mt-5 text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
+              <h1 className="mt-5 bg-gradient-to-r from-slate-50 via-sky-300 to-primary-200 bg-clip-text text-3xl font-semibold tracking-tight text-transparent md:text-4xl lg:text-5xl">
                 {t.hero.title}
               </h1>
               <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-300 md:text-base">
@@ -564,13 +564,13 @@ export default function HomePage() {
               <div className="mt-7 flex flex-wrap items-center gap-3">
                 <a
                   href="#trial"
-                  className="inline-flex items-center justify-center rounded-full bg-primary-500 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary-500/40 hover:bg-primary-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-500 to-sky-500 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary-500/40 hover:from-primary-400 hover:to-sky-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
                 >
                   {t.hero.ctaPrimary}
                 </a>
                 <a
                   href="#courses"
-                  className="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-900/60 px-5 py-2.5 text-sm font-semibold text-slate-100 hover:border-primary-500/60 hover:text-primary-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+                  className="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-900/40 px-5 py-2.5 text-sm font-semibold text-slate-100 hover:border-primary-400 hover:text-primary-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
                 >
                   {t.hero.ctaSecondary}
                 </a>
@@ -661,7 +661,7 @@ export default function HomePage() {
               ).map(([key, course]) => (
                 <article
                   key={key}
-                  className="group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-900/60 p-5 shadow-sm shadow-black/40 transition hover:-translate-y-1 hover:border-primary-500/70 hover:shadow-xl hover:shadow-primary-500/20"
+                  className="group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-900/60 p-5 shadow-sm shadow-black/40 transition hover:-translate-y-0.5 hover:border-primary-400 hover:shadow-xl hover:shadow-primary-500/20"
                 >
                   <div>
                     <h3 className="text-lg font-semibold text-slate-50">
@@ -999,7 +999,7 @@ export default function HomePage() {
       </footer>
 
       {/* Mobile bottom CTA bar */}
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-800/80 bg-slate-950/95/90 backdrop-blur-lg md:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-800/80 bg-slate-950/95 backdrop-blur-lg md:hidden">
         <div className="container flex items-center justify-between gap-3 py-3">
           <button
             type="button"

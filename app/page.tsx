@@ -150,7 +150,8 @@ const content = {
       course: "Kursni tanlang",
       submit: "Ariza yuborish",
       note: "Arizani yuborganingizdan so‘ng administratorimiz siz bilan Telegram yoki telefon orqali bog‘lanadi.",
-      success: "Rahmat! Arizangiz yuborildi. Tez orada siz bilan bog‘lanamiz."
+      success: "Rahmat! Arizangiz yuborildi. Tez orada siz bilan bog‘lanamiz.",
+      error: "Xatolik yuz berdi. Iltimos, qaytadan urinib ko‘ring."
     },
     testimonials: {
       title: "Talabalar fikrlari",
@@ -338,7 +339,8 @@ const content = {
       submit: "Отправить заявку",
       note: "После отправки заявки мы свяжемся с вами по телефону или в Telegram и ответим на все вопросы.",
       success:
-        "Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время."
+        "Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.",
+      error: "Произошла ошибка. Пожалуйста, попробуйте еще раз."
     },
     testimonials: {
       title: "Отзывы студентов",
@@ -415,16 +417,42 @@ export default function HomePage() {
   const [language, setLanguage] = useState<Language>("uz");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
   const t = content[language];
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const name = String(formData.get("name") ?? "").trim();
+    const phone = String(formData.get("phone") ?? "").trim();
+    const course = String(formData.get("course") ?? "").trim();
+
+    setSubmitted(false);
+    setSubmitError(false);
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+
+    try {
+      const response = await fetch("/api/lead", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name, phone, course })
+      });
+
+      if (!response.ok) {
+        setSubmitError(true);
+        return;
+      }
+
       setSubmitted(true);
-      (e.target as HTMLFormElement).reset();
-    }, 600);
+      form.reset();
+    } catch {
+      setSubmitError(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -992,6 +1020,11 @@ export default function HomePage() {
                     {t.trial.success}
                   </p>
                 )}
+                {submitError && (
+                  <p className="rounded-lg border border-rose-500/50 bg-rose-500/10 px-3 py-2 text-xs text-rose-200">
+                    {t.trial.error}
+                  </p>
+                )}
               </form>
             </div>
 
@@ -1168,4 +1201,3 @@ export default function HomePage() {
     </div>
   );
 }
-

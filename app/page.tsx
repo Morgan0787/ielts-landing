@@ -939,9 +939,9 @@ export default function HomePage() {
 
               <form
                 onSubmit={handleSubmit}
-                className="mt-6 space-y-4 rounded-2xl border border-slate-800 bg-slate-900/70 p-5 shadow-sm shadow-black/40"
+                className="mt-6 space-y-5 rounded-2xl border border-slate-800 bg-slate-900/70 p-5 shadow-sm shadow-black/40"
               >
-                <div className="space-y-1 text-sm">
+                <div className="space-y-1.5 text-sm">
                   <label
                     htmlFor="name"
                     className="block text-xs font-medium text-slate-200 md:text-sm"
@@ -958,7 +958,7 @@ export default function HomePage() {
                     }
                   />
                 </div>
-                <div className="space-y-1 text-sm">
+                <div className="space-y-1.5 text-sm">
                   <label
                     htmlFor="phone"
                     className="block text-xs font-medium text-slate-200 md:text-sm"
@@ -977,7 +977,7 @@ export default function HomePage() {
                     }
                   />
                 </div>
-                <div className="space-y-1 text-sm">
+                <div className="space-y-1.5 text-sm">
                   <label
                     htmlFor="course"
                     className="block text-xs font-medium text-slate-200 md:text-sm"
@@ -1006,15 +1006,28 @@ export default function HomePage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex w-full items-center justify-center rounded-lg bg-primary-500 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary-500/40 hover:bg-primary-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 disabled:cursor-not-allowed disabled:opacity-70"
+                  className="inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-emerald-500 via-emerald-500 to-green-400 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-500/35 transition-all duration-200 hover:-translate-y-0.5 hover:from-emerald-400 hover:via-emerald-500 hover:to-green-300 hover:shadow-xl hover:shadow-emerald-500/45 active:translate-y-0 active:scale-[0.99] active:from-emerald-500 active:to-green-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 disabled:cursor-not-allowed disabled:from-slate-500 disabled:via-slate-500 disabled:to-slate-500 disabled:text-slate-100 disabled:opacity-100 disabled:shadow-none"
                 >
-                  {isSubmitting
-                    ? language === "uz"
-                      ? "Yuborilmoqda..."
-                      : "Отправка..."
-                    : t.trial.submit}
+                  <span className="inline-flex min-w-[10.5rem] items-center justify-center gap-2">
+                    {isSubmitting && (
+                      <span
+                        aria-hidden="true"
+                        className="h-4 w-4 animate-spin rounded-full border-2 border-white/35 border-t-white"
+                      />
+                    )}
+                    <span>
+                      {isSubmitting
+                        ? language === "uz"
+                          ? "Yuborilmoqda..."
+                          : "Отправка..."
+                        : t.trial.submit}
+                    </span>
+                  </span>
                 </button>
-                <p className="text-xs text-slate-400">{t.trial.note}</p>
+                <p className="text-xs text-slate-400">
+                  Arizadan so‘ng administratorimiz siz bilan Telegram yoki
+                  telefon orqali bog‘lanadi.
+                </p>
                 {submitted && (
                   <p className="rounded-lg border border-emerald-500/50 bg-emerald-500/10 px-3 py-2 text-xs text-emerald-200">
                     {t.trial.success}

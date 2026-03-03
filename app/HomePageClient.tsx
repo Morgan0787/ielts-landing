@@ -401,6 +401,14 @@ export default function HomePageClient({ clientConfig }: HomePageClientProps) {
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState(false);
   const t = content[language];
+  const heroTitle = clientConfig.heroTitle || t.hero.title;
+  const heroSubtitle = clientConfig.heroSubtitle || t.hero.subtitle;
+  const ctaPrimaryText = clientConfig.ctaPrimaryText || t.hero.ctaPrimary;
+  const ctaSecondaryText = clientConfig.ctaSecondaryText || t.hero.ctaSecondary;
+  const ctaPrimaryHref = clientConfig.ctaPrimaryHref || "#trial";
+  const ctaSecondaryHref = clientConfig.ctaSecondaryHref || "#courses";
+  const coursesTitle = clientConfig.coursesTitle || t.courses.title;
+  const coursesSubtitle = clientConfig.coursesSubtitle || t.courses.subtitle;
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -543,23 +551,23 @@ export default function HomePageClient({ clientConfig }: HomePageClientProps) {
                 {t.hero.badge}
               </div>
               <h1 className="mt-5 bg-gradient-to-r from-slate-50 via-sky-300 to-primary-200 bg-clip-text text-3xl font-semibold tracking-tight text-transparent md:text-4xl lg:text-5xl">
-                {t.hero.title}
+                {heroTitle}
               </h1>
               <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-300 md:text-base">
-                {t.hero.subtitle}
+                {heroSubtitle}
               </p>
               <div className="mt-7 flex flex-wrap items-center gap-3">
                 <a
-                  href="#trial"
+                  href={ctaPrimaryHref}
                   className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-500 to-sky-500 px-6 py-3 text-sm font-semibold text-white shadow-xl shadow-primary-500/50 hover:from-primary-400 hover:to-sky-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 md:px-7 md:py-3.5 md:text-base"
                 >
-                  {t.hero.ctaPrimary}
+                  {ctaPrimaryText}
                 </a>
                 <a
-                  href="#courses"
+                  href={ctaSecondaryHref}
                   className="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-900/40 px-4 py-2.5 text-xs font-semibold text-slate-100 hover:border-primary-400 hover:text-primary-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 md:px-5 md:text-sm"
                 >
-                  {t.hero.ctaSecondary}
+                  {ctaSecondaryText}
                 </a>
               </div>
             </div>
@@ -748,8 +756,8 @@ export default function HomePageClient({ clientConfig }: HomePageClientProps) {
         >
           <div className="container">
             <div className="max-w-2xl">
-              <h2 className="section-title">{t.courses.title}</h2>
-              <p className="section-subtitle">{t.courses.subtitle}</p>
+              <h2 className="section-title">{coursesTitle}</h2>
+              <p className="section-subtitle">{coursesSubtitle}</p>
             </div>
             <div className="mt-8 grid gap-6 md:grid-cols-2">
               {clientConfig.courses.map((course) => (
@@ -1097,20 +1105,24 @@ export default function HomePageClient({ clientConfig }: HomePageClientProps) {
               <h2 className="section-title">{t.contact.title}</h2>
               <p className="section-subtitle">{t.contact.subtitle}</p>
               <div className="mt-6 flex flex-wrap items-center gap-3">
-                <a
-                  href={`tel:${clientConfig.phoneE164}`}
-                  className="inline-flex items-center justify-center rounded-full bg-primary-500 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary-500/40 hover:bg-primary-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
-                >
-                  {t.contact.phoneLabel}: {clientConfig.phoneDisplay}
-                </a>
-                <a
-                  href={clientConfig.telegramLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-900/60 px-6 py-2.5 text-sm font-semibold text-slate-100 hover:border-primary-500/60 hover:text-primary-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
-                >
-                  {t.contact.telegramLabel}
-                </a>
+                {clientConfig.phoneE164 && clientConfig.phoneDisplay && (
+                  <a
+                    href={`tel:${clientConfig.phoneE164}`}
+                    className="inline-flex items-center justify-center rounded-full bg-primary-500 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary-500/40 hover:bg-primary-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+                  >
+                    {t.contact.phoneLabel}: {clientConfig.phoneDisplay}
+                  </a>
+                )}
+                {clientConfig.telegramLink && (
+                  <a
+                    href={clientConfig.telegramLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-900/60 px-6 py-2.5 text-sm font-semibold text-slate-100 hover:border-primary-500/60 hover:text-primary-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+                  >
+                    {t.contact.telegramLabel}
+                  </a>
+                )}
               </div>
             </div>
             <div className="space-y-3 rounded-2xl border border-slate-800 bg-slate-900/70 p-5 text-xs text-slate-300 shadow-sm shadow-black/40 md:text-sm">
@@ -1147,43 +1159,47 @@ export default function HomePageClient({ clientConfig }: HomePageClientProps) {
             }}
             className="flex-1 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-500 to-sky-500 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary-500/40 hover:from-primary-400 hover:to-sky-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
           >
-            {t.hero.ctaPrimary}
+            {ctaPrimaryText}
           </button>
           <div className="flex items-center gap-2">
-            <a
-              href={`tel:${clientConfig.phoneE164}`}
-              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-700 bg-slate-900/80 text-slate-200 hover:border-primary-500/60 hover:text-primary-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
-              aria-label={t.contact.phoneLabel}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                className="h-4 w-4"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+            {clientConfig.phoneE164 && (
+              <a
+                href={`tel:${clientConfig.phoneE164}`}
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-700 bg-slate-900/80 text-slate-200 hover:border-primary-500/60 hover:text-primary-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+                aria-label={t.contact.phoneLabel}
               >
-                <path d="M4.5 5.5C4.5 15 9 19.5 18.5 19.5C19.328 19.5 20 18.828 20 18V15.75C20 15.3358 19.6642 15 19.25 15L16.75 15C16.421 15 16.1375 15.214 16.047 15.53L15.572 17.214C13.8 16.7 11.8 14.8 11.286 13.028L12.97 12.553C13.286 12.4625 13.5 12.179 13.5 11.85L13.5 9.35C13.5 8.93579 13.1642 8.6 12.75 8.6H10.5C9.67157 8.6 9 9.27157 9 10.1V10.1" />
-              </svg>
-            </a>
-            <a
-              href={clientConfig.telegramLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-700 bg-slate-900/80 text-slate-200 hover:border-primary-500/60 hover:text-primary-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
-              aria-label={t.contact.telegramLabel}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                className="h-4 w-4"
-                fill="currentColor"
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  className="h-4 w-4"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M4.5 5.5C4.5 15 9 19.5 18.5 19.5C19.328 19.5 20 18.828 20 18V15.75C20 15.3358 19.6642 15 19.25 15L16.75 15C16.421 15 16.1375 15.214 16.047 15.53L15.572 17.214C13.8 16.7 11.8 14.8 11.286 13.028L12.97 12.553C13.286 12.4625 13.5 12.179 13.5 11.85L13.5 9.35C13.5 8.93579 13.1642 8.6 12.75 8.6H10.5C9.67157 8.6 9 9.27157 9 10.1V10.1" />
+                </svg>
+              </a>
+            )}
+            {clientConfig.telegramLink && (
+              <a
+                href={clientConfig.telegramLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-700 bg-slate-900/80 text-slate-200 hover:border-primary-500/60 hover:text-primary-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+                aria-label={t.contact.telegramLabel}
               >
-                <path d="M9.036 14.47 8.77 17.727c.37 0 .53-.159.72-.35l1.732-1.658 3.594 2.634c.658.363 1.124.172 1.303-.61l2.359-11.066.001-.001c.21-.98-.356-1.363-1.002-1.125L4.52 9.39c-.956.371-.942.905-.163 1.146l3.35 1.043 7.777-4.91c.366-.222.701-.103.426.119" />
-              </svg>
-            </a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  className="h-4 w-4"
+                  fill="currentColor"
+                >
+                  <path d="M9.036 14.47 8.77 17.727c.37 0 .53-.159.72-.35l1.732-1.658 3.594 2.634c.658.363 1.124.172 1.303-.61l2.359-11.066.001-.001c.21-.98-.356-1.363-1.002-1.125L4.52 9.39c-.956.371-.942.905-.163 1.146l3.35 1.043 7.777-4.91c.366-.222.701-.103.426.119" />
+                </svg>
+              </a>
+            )}
           </div>
         </div>
       </div>

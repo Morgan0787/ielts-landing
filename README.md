@@ -20,3 +20,10 @@ npm run dev
 
 Then open `http://localhost:3000` in your browser.
 
+
+## How to create a new demo client in 60 seconds
+
+1. Duplicate `CLIENTS.default` in `app/client-configs.ts` and give it a new key (for example `mycenter`).
+2. Update `centerName`, `phoneDisplay`, `phoneE164`, and `courses` values for that client.
+3. Preview instantly by opening `/?demo=NEWKEY` (for example `/?demo=mycenter`).
+4. Optionally map a subdomain to that key in `app/getClientConfig.ts`.
